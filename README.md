@@ -1,10 +1,17 @@
-# Cyclic - Express Hello World
+# ColurWare
 
-This is a basic starter Expressjs app with:
+Say hello to the future of OSes.
 
-- Static file hosting
-- Logging Middleware
-- Catch-all handler that echoes request info
+Colurware is an operating system that I plan on making real in the future and decided to make a web version so you can see how the real thing will be like.
+
+The web version includes:
+
+- Floating + Rounded taskbar
+- Custom widget editor
+- Unbl*cker built in to Chrome
+- Futuristic file explorer
+- Masonry-like start menu
+- The ability to group apps
 
 ## Local Quick Start
 
