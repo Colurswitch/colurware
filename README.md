@@ -13,6 +13,9 @@ The web version includes:
 - Masonry-like start menu
 - The ability to group apps on desktop
 - Ch*t built-in
+- Dynamic background
+- Light/Dark mode
+- A secret feature!
 
 The web version unfourtanutely does NOT have:
 
