@@ -11,7 +11,13 @@ The web version includes:
 - Unbl*cker built in to Chrome
 - Futuristic file explorer
 - Masonry-like start menu
-- The ability to group apps
+- The ability to group apps on desktop
+- Ch*t built-in
+
+The web version unfourtanutely does NOT have:
+
+- The ability to group apps on taskbar
+- Network settings
 
 ## Local Quick Start
 
