@@ -37,7 +37,9 @@ And this problem goes further than just personalization, though. Say you want to
 
 And what if you lose track of your cursor? You can use Windows' built in cursor finding feature which is pretty useless. All it does is that it displays a shrinking circle centered at the cursor's position which is not really the best way to go. The light-gray outline on the circle is not see-able on most colors.
 
-Introducing Microsoft PowerToys! This program fixes that problem and many more. By now you are probably wondering why I am giving away this info. All you need to do is just download 1 or 2 programs and all those problems will be fixed, right? Not so fast, my friend. There are some unlucky people who got scammed by downloading viruses disguised as customizers. That's what my OS will fix.
+Introducing Microsoft PowerToys! This program fixes that problem and many more. By now you are probably wondering why I am giving away this info. All you need to do is just download 1 or 2 programs and all those problems will be fixed, right? Not so fast, my friend. There are some unlucky people who got scammed by downloading viruses disguised as customizers, being the reason why most people do not trust programs downloaded from the internet. That's what my OS will fix.
+
+## My solution
 
 ColurWare is an operating system that I plan on making real in the future and decided to make a web version so you can see how the real thing will be like.
 
