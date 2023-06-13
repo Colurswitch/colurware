@@ -62,6 +62,7 @@ The web version includes:
 - Working poroductively
   - Rename multiple files at once (Bulk rename)
   - Lost your cursor? We can find it!
+  - Spotlight search!
 - Ch*t built-in
 - Dynamic background
 - Light/Dark mode
