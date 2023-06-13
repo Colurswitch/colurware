@@ -50,6 +50,7 @@ The web version includes:
 - Unbl*cker built in to Chrome
 - Futuristic file explorer
 - Masonry-like start menu
+- Minecraft. Why not?
 - The ability to group apps on desktop
 - The ability to personalize like never before
   - Changing taskbar texture/color
