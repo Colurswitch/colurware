@@ -193,6 +193,14 @@
       /* Non-prefixed version, currently supported by Chrome and Opera */
     }
 
+    .dialog-type-ind {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 10px;
+      height: 100%;
+    }
+
     .window-header {
       padding: 10px;
       z-index: 10;
@@ -724,13 +732,15 @@
           var dialog = document.createElement("div");
           // Create the dialog itself.
           dialog.className = "dialog";
+          var ind = document.createElement("div");
+          ind.className = "dialog-type-ind";
           // Create the window header.
           var header = document.createElement("div");
           header.className = "window-header";
           var headertxt = document.createElement("span");
           headertxt.className = "window-title";
           headertxt.innerText = title;
-          header.appendChild(headertxt)
+          header.appendChild(headertxt);
           if (allowToClose == true) {
             var toolbar = document.createElement("div");
             toolbar.className = "window-toolbar";
@@ -813,6 +823,7 @@
           }
           dialogcntnt.innerHTML = content
           dialogcntnt.appendChild(dialogbtns);
+          dialogcntnt.appendChild(ind);
           dialog.appendChild(dialogcntnt);
           windows.appendChild(dialog);
         },
