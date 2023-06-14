@@ -699,7 +699,7 @@
       <div data-app="browserApp"><img src="./icons/Explorer.ico" alt="explorer"></div>
     </div>
   </footer>
-  <audio hidden></audio>
+  <audio hidden id="soundSystem"></audio>
   <noscript>JavaScript is required.</noscript>
   <script>
     var os = {
@@ -806,6 +806,32 @@
           "OK_CANCEL": 2,
           "YES_NO": 3,
           "YES_NO_CANCEL": 4
+        }
+      },
+      system: {
+        playSound: function (id) {
+          switch (id) {
+            case 1:
+              $("#soundSystem").attr("src", "./sounds/Windows Background.wav");
+            case 2:
+              $("#soundSystem").attr("src", "./sounds/Windows Foreground.wav");
+            case 3:
+              $("#soundSystem").attr("src", "./sounds/Windows Hardware Fail.wav");
+            case 4:
+              $("#soundSystem").attr("src", "./sounds/Windows Hardware Insert.wav");
+            case 5:
+              $("#soundSystem").attr("src", "./sounds/Windows Hardware Remove.wav");
+            case 6:
+              $("#soundSystem").attr("src", "./sounds/Windows Notify Calendar.wav");
+            case 7:
+              $("#soundSystem").attr("src", "./sounds/Windows Notify Email.wav");
+            case 8:
+              $("#soundSystem").attr("src", "./sounds/Windows Notify Messaging.wav");
+            case 9:
+              $("#soundSystem").attr("src", "./sounds/Windows Notify System Generic.wav");
+            case 10:
+              $("#soundSystem").attr("src", "./sounds/Windows User Account Control.wav");
+          } 
         }
       }
     }
@@ -11605,7 +11631,7 @@
   <script>
     if (typeof (Storage) !== "undefined") {
       // Code for localStorage/sessionStorage.
-    } else {
+    //} else {
       os.ui.msgbox("What a bummer.", "Your browser does not support localStorage :(");
     }
     window.onload = function () {
