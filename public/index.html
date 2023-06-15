@@ -763,10 +763,13 @@
           dialog.appendChild(header);
           if (type == "info") {
             ind.style = "background-color: #0a9ef5;";
+            os.system.playSound(9);
           } else if (type == "warn") {
             ind.style = "background-color: gold;";
+            os.system.playSound(2);
           } else if (type == "err") {
             ind.style = "background-color: red;"
+            os.system.playSound(1);
           }
           var dialogcntnt = document.createElement("div");
           dialogcntnt.className = "window-content";
