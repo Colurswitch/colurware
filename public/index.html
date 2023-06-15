@@ -727,7 +727,7 @@
   <script>
     var os = {
       ui: {
-        msgbox: function (title, content, buttonSet = 1, allowToClose = true) {
+        msgbox: function (title, content, buttonSet = 1, allowToClose = true, type = "info") {
           var windows = document.getElementById("windows");
           var dialog = document.createElement("div");
           // Create the dialog itself.
@@ -756,6 +756,13 @@
             header.appendChild(toolbar);
           }
           dialog.appendChild(header);
+          if (type == "info") {
+            ind.style = "background-color: RoyalBlue;";
+          } else if (type == "warn") {
+            ind.style = "background-color: gold;";
+          } else if (type == "err") {
+            ind.style = "background-color: red;"
+          }
           var dialogcntnt = document.createElement("div");
           dialogcntnt.className = "window-content";
           var dialogbtns = document.createElement("div");
