@@ -1055,7 +1055,7 @@
                   "./sounds/Windows User Account Control.wav"
                 );
             }
-            var soundCtx = new AudioContext();
+            /*var soundCtx = new AudioContext();
             
             var src = soundCtx.createMediaElementSource(document.querySelector("#soundSystem"));
             var gainNode = soundCtx.createGain();
@@ -1065,9 +1065,12 @@
 
             if (soundCtx.state === "suspended") {
               soundCtx.resume();
-            }
+            }*/
 
-            document.querySelector("#soundSystem").play();
+            document.querySelector("#soundSystem").load();
+            document.querySelector("#soundSystem").addEventListener("load", function () {
+              document.querySelector("#soundSystem").play()
+            }, true);
           },
         },
       };
