@@ -855,14 +855,51 @@
         </div>
       </div>
     </div>
+    <style>
+      #taskbar_startMenu{
+        width: 100%;
+        height: calc(100% - 55px);
+        transition: .2s;
+        z-index: 1000;
+      }
 
+      #taskbar_stertMenu_masonryZone{
+        padding: 5px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: auto;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+
+      .taskbar_startMenu_masonryZone_masonryItem{
+        border: 1px solid red;
+        border-radius: 5px;
+        width: calc(100% / 3);
+        margin: 5px;
+      }
+    </style>
+    <div id="taskbar_startMenu">
+      <div id="taskbar_startMenu_masonryZone">
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 100px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 110px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 120px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 130px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 140px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 150px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 170px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 180px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 190px;"></div>
+        <div class=".taskbar_startMenu_masonryZone_masonryItem" style="height: 200px;"></div>
+      </div>
+    </div>
     <footer id="taskbar">
       <div id="taskbar_start">
         <span class="material-icons">radio_button_checked</span>
       </div>
       <div id="taskbar_search">
-        <span class="material-icons">search</span
-        ><input type="text" placeholder="Search..." />
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="Search..." />
       </div>
       <div id="taskbar_apps">
         <div id="launch-browserApp">
@@ -871,6 +908,9 @@
         <div data-app="browserApp">
           <img src="./icons/Explorer.ico" alt="explorer" />
         </div>
+      </div>
+      <div id="taskbar_news">
+        <img src="./profile.png" alt="C" />
       </div>
     </footer>
     <audio hidden id="soundSystem"></audio>
