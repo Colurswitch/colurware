@@ -387,7 +387,6 @@
       }
 
       #taskbar_start {
-        cursor: pointer;
         background-color: #00000080;
         color: white;
         box-sizing: content-box;
@@ -499,6 +498,21 @@
       #taskbar_search input::-ms-input-placeholder {
         /* Microsoft Edge */
         color: rgba(255, 255, 255, 0.466);
+      }
+
+      #taskbar_news {
+        background-color: #00000080;
+        color: white;
+        box-sizing: content-box;
+        margin: 2.5px;
+        padding: 3px;
+        min-width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border-radius: 5px;
       }
 
       #browserApp {
@@ -744,11 +758,6 @@
 
       #taskbar_stertMenu_masonryZone{
         padding: 5px;
-        display: grid;
-        grid-template-columns: auto;
-        grid-auto-rows: auto;
-        justify-content: space-between;
-        align-items: stretch;
       }
 
       .taskbar_startMenu_masonryZone_masonryItem{
@@ -761,6 +770,8 @@
     <div id="taskbar_startMenu">
       <div id="taskbar_startMenu_masonryZone">
         <div class="taskbar_startMenu_masonryZoneCol"></div>
+        <div class="taskbar_startMenu_masonryZoneCol"></div>
+        <div class="taskbar_startMenu_masonryZoneCol"></div>
         <div class="taskbar_startMenu_masonryZone_masonryItem" style="height: 100px;"></div>
         <div class="taskbar_startMenu_masonryZone_masonryItem" style="height: 110px;"></div>
         <div class="taskbar_startMenu_masonryZone_masonryItem" style="height: 120px;"></div>
@@ -772,6 +783,12 @@
         <div class="taskbar_startMenu_masonryZone_masonryItem" style="height: 190px;"></div>
         <div class="taskbar_startMenu_masonryZone_masonryItem" style="height: 200px;"></div>
       </div>
+      <script>
+        var taskbar_startMenu_MasonryZone_colcade = new Colcade("#taskbar_startMenu_masonryZone",{
+          columns: ".taskbar_startMenu_masonryZoneCol",
+          items: ".taskbar_startMenu_masonryZone_masonryItem"
+        })
+      </script>
     </div>
     <footer id="taskbar">
       <div id="taskbar_start">
