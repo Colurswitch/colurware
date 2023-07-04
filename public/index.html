@@ -720,7 +720,6 @@
                 id="browserApp_urlInput"
               />
               <button><span class="material-icons">more_vert</span></button>
-              <button><span class="material-icons">open_in_new</span></button>
             </div>
             <div>
               <div>
@@ -12465,77 +12464,11 @@
           }
           // If the text specified in the input above is a valid URL, then go there. Otherwise, open a Google Search.
           if (isurl(this.value)) {
-            fetch(
-              `http://api.allorigins.win/get?url=${encodeURIComponent(
-                this.value
-              )}`
-            )
-              .then((response) => {
-                if (response.ok) return response.json();
-              })
-              .then((data) => {
-                console.log(data);
-                var iframe = document.getElementById("browserApp_webpage");
-                var doc = iframe.document;
-
-                if (iframe.contentDocument) {
-                  doc = iframe.contentDocument;
-                } else if (iframe.contentWindow) {
-                  doc = iframe.contentWindow.document;
-                }
-                doc.open();
-                doc.writeln(data.contents);
-                doc.close();
-              });
-          } else if (isurl(this.value) && !this.value.contains("https://")) {
-            fetch(
-              `http://api.allorigins.win/get?url=https://${encodeURIComponent(
-                this.value
-              )}`
-            )
-              .then((response) => {
-                if (response.ok) return response.json();
-              })
-              .then((data) => {
-                console.log(data);
-                var iframe = document.getElementById("browserApp_webpage");
-                var doc = iframe.document;
-
-                if (iframe.contentDocument) {
-                  doc = iframe.contentDocument;
-                } else if (iframe.contentWindow) {
-                  doc = iframe.contentWindow.document;
-                }
-                doc.open();
-                doc.writeln(data.contents);
-                doc.close();
-              });
-          } else {
-            fetch(
-              `http://api.allorigins.win/get?url=${encodeURIComponent(
-                `https://www.google.com/search?q=${this.value.replace(
-                  " ",
-                  "+"
-                )}`
-              )}`
-            )
-              .then((response) => {
-                if (response.ok) return response.json();
-              })
-              .then((data) => {
-                console.log(data);
-                var iframe = document.getElementById("browserApp_webpage");
-                var doc = iframe.document;
-
-                if (iframe.contentDocument) {
-                  doc = iframe.contentDocument;
-                } else if (iframe.contentWindow) {
-                  doc = iframe.contentWindow.document;
-                }
-                doc.open();
-                doc.writeln(data.contents);
-                doc.close();
-              });
+            $("#browserApp_webpage").attr("src",this.value);
+          } else if (!isurl(this.value)) {
+            document.getElementById("browserApp_webpage").focus();
+            $("#browserApp_webpage").attr("src",`https://google.com/search?q=${this.value.replace(" ","+")}`);
+            this.value = this.value.replace(" ","+");
           }
         };
         document.getElementById("browserApp_addTab").onclick = function (ev) {
