@@ -12474,7 +12474,11 @@
             }
           }
           app.onclick = function () {
-            openWindowById(app.id.substr(7));
+            switch (app.id) {
+              case "launch-browserApp" : {
+                openWindowById("browserApp")
+              }
+            }
           };
         }
         /*document.getElementById("taskbar").oncontextmenu = function (ev) {};
