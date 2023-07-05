@@ -12437,20 +12437,20 @@
           var app = apps.item(i);
           var toLaunch = app.getAttribute("data-app");
           app.onclick = function () {
-            if (document.getElementById(toLaunch).getAttribute("hidden") != "" &&
-            document.getElementById(toLaunch).getAttribute("data-isClosed") == "false") {
+            if (document.getElementById(toLaunch).getAttribute("hidden") !== "" &&
+            document.getElementById(toLaunch).getAttribute("data-isClosed") === "false") {
               app.style.backgroundColor = "#ffffff1f";
               console.log(toLaunch);
               $(toLaunch).attr("hidden","");
             }
-            if (document.getElementById(toLaunch).getAttribute("hidden") == "" &&
-            document.getElementById(toLaunch).getAttribute("data-isClosed") == "false") {
+            if (document.getElementById(toLaunch).getAttribute("hidden") === "" &&
+            document.getElementById(toLaunch).getAttribute("data-isClosed") === "false") {
               app.style.borderBottom = "3px solid #eeeeeea8";
               console.log(toLaunch);
               $(toLaunch).removeAttr("hidden");
             }
-            if (document.getElementById(toLaunch).getAttribute("hidden") == "" &&
-            document.getElementById(toLaunch).getAttribute("data-isClosed") == "true") {
+            if (document.getElementById(toLaunch).getAttribute("hidden") === "" &&
+            document.getElementById(toLaunch).getAttribute("data-isClosed") === "true") {
               app.style.backgroundColor = "#ffffff00";
               app.style.borderBottom = "0px solid #ffffff00";
               console.log(toLaunch);
