@@ -108,7 +108,7 @@
 
       .windowfullscrn {
         position: absolute;
-        z-index: 9;
+        z-index: 2000;
         background-color: #f1f1f1;
         box-shadow: 5px 5px 18px 0px rgba(0, 0, 0, 0.16);
         overflow: hidden;
@@ -678,7 +678,7 @@
 
   <body>
     <div id="windows">
-      <div class="windowfullscrn" id="browserApp">
+      <div class="windowfullscrn" id="browserApp" data-isClosed="false" hidden>
         <div class="window-header">
           <div id="browserApp_tabs">
             <div
@@ -12414,7 +12414,7 @@
     <script>
       if (typeof Storage !== "undefined") {
         // Code for localStorage/sessionStorage.
-        //} else {
+        } else {
         os.ui.msgbox(
           "What a bummer.",
           "Your browser does not support localStorage :(",
@@ -12428,14 +12428,36 @@
         initResizeElement();
         var apps = document.getElementById("taskbar_apps").children;
         var windows = document.getElementsByClassName("window");
+        var window_toolbars = document.getElementsByClassName("window-toolbar");
         for (let i = 0; i < apps.length; i++) {
           var app = apps.item(i);
-          app.onclick = function () {
-            console.log(this.id.substring(7));
-            document
-              .getElementById(this.id.substring(7))
-              .removeAttribute("hidden");
-          };
+          
+          while (document.getElementById(this.id.substring(7)).getAttribute("hidden") != null &&
+          document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "false") {
+            app.style.backgroundColor = "#ffffff1f";
+            app.onclick = function () {
+              console.log(this.id.substring(7));
+              $(this.id.substring(7)).attr("hidden","");
+            };
+          }
+          while (document.getElementById(this.id.substring(7)).getAttribute("hidden") == "" &&
+          document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "false") {
+            app.style.borderBottom = "3px solid #eeeeeea8";
+            app.onclick = function () {
+              console.log(this.id.substring(7));
+              $(this.id.substring(7)).removeAttr("hidden");
+            };
+          }
+          while (document.getElementById(this.id.substring(7)).getAttribute("hidden") == "" &&
+          document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "true") {
+            app.style.backgroundColor = "#ffffff00";
+            app.style.borderBottom = "0px solid #ffffff00";
+            app.onclick = function () {
+              console.log(this.id.substring(7));
+              $(this.id.substring(7)).removeAttr("hidden");
+              $(this.id.substring(7)).attr("data-isClosed","false");
+            };
+          }
         }
         /*document.getElementById("taskbar").oncontextmenu = function (ev) {};
         const mi = [
