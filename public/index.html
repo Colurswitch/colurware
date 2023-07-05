@@ -12431,32 +12431,27 @@
         var window_toolbars = document.getElementsByClassName("window-toolbar");
         for (let i = 0; i < apps.length; i++) {
           var app = apps.item(i);
-          
-          while (document.getElementById(this.id.substring(7)).getAttribute("hidden") != null &&
-          document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "false") {
-            app.style.backgroundColor = "#ffffff1f";
-            app.onclick = function () {
+          app.onclick = function () {
+            if (document.getElementById(this.id.substring(7)).getAttribute("hidden") != null &&
+            document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "false") {
+              app.style.backgroundColor = "#ffffff1f";
               console.log(this.id.substring(7));
               $(this.id.substring(7)).attr("hidden","");
-            };
-          }
-          while (document.getElementById(this.id.substring(7)).getAttribute("hidden") == "" &&
-          document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "false") {
-            app.style.borderBottom = "3px solid #eeeeeea8";
-            app.onclick = function () {
+            }
+            if (document.getElementById(this.id.substring(7)).getAttribute("hidden") == "" &&
+            document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "false") {
+              app.style.borderBottom = "3px solid #eeeeeea8";
               console.log(this.id.substring(7));
               $(this.id.substring(7)).removeAttr("hidden");
-            };
-          }
-          while (document.getElementById(this.id.substring(7)).getAttribute("hidden") == "" &&
-          document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "true") {
-            app.style.backgroundColor = "#ffffff00";
-            app.style.borderBottom = "0px solid #ffffff00";
-            app.onclick = function () {
+            }
+            if (document.getElementById(this.id.substring(7)).getAttribute("hidden") == "" &&
+            document.getElementById(this.id.substring(7)).getAttribute("data-isClosed") == "true") {
+              app.style.backgroundColor = "#ffffff00";
+              app.style.borderBottom = "0px solid #ffffff00";
               console.log(this.id.substring(7));
               $(this.id.substring(7)).removeAttr("hidden");
               $(this.id.substring(7)).attr("data-isClosed","false");
-            };
+            }
           }
         }
         /*document.getElementById("taskbar").oncontextmenu = function (ev) {};
