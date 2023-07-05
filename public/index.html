@@ -12437,7 +12437,7 @@
           var app = apps.item(i);
           var toLaunch = app.getAttribute("data-app");
           app.onclick = function () {
-            if (document.getElementById(toLaunch).getAttribute("hidden") != null &&
+            if (document.getElementById(toLaunch).getAttribute("hidden") != "" &&
             document.getElementById(toLaunch).getAttribute("data-isClosed") == "false") {
               app.style.backgroundColor = "#ffffff1f";
               console.log(toLaunch);
