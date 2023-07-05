@@ -12435,7 +12435,7 @@
         var window_toolbars = document.getElementsByClassName("window-toolbar");
         for (let i = 0; i < apps.length; i++) {
           var app = apps.item(i);
-          var toLaunch = app.getAttribute("data-app");
+          var toLaunch = app.dataset.app;
           app.onclick = function () {
             if (!document.getElementById(toLaunch).checkVisibility() &&
             document.getElementById(toLaunch).getAttribute("data-isClosed") === "false") {
