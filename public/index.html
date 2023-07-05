@@ -809,7 +809,7 @@
         <input type="text" placeholder="Search..." />
       </div>
       <div id="taskbar_apps">
-        <div id="launch-browserApp">
+        <div data-app="browserApp">
           <img src="./browserApp.png" alt="chrome_browser" />
         </div>
         <div data-app="broetstehwpp">
@@ -12474,11 +12474,7 @@
             }
           }
           app.onclick = function () {
-            switch (app.id) {
-              case "launch-browserApp" : {
-                openWindowById("browserApp")
-              }
-            }
+            openWindowById(app.dataset.app)
           };
         }
         /*document.getElementById("taskbar").oncontextmenu = function (ev) {};
