@@ -12445,33 +12445,32 @@
         
         for (let i = 0; i < apps.length; i++) {
           var app = apps.item(i);
-          var toLaunch = app.dataset.app;
+          
           //function openWindowById(toLaunch) {
             
           //}
           app.onclick = function () {
+            var toLaunch = this.dataset.app;
             if (
               $(`#${toLaunch}`).attr("hidden") === undefined &&
               $(`#${toLaunch}`).attr("data-isClosed") === "false"
             ) {
-              app.style.backgroundColor = "#ffffff1f";
+              this.style.backgroundColor = "#ffffff1f";
               console.log(toLaunch);
               $(`#${toLaunch}`).attr("hidden", "");
-            }
-            if (
+            } else if (
               $(`#${toLaunch}`).attr("hidden") === "" &&
               $(`#${toLaunch}`).attr("data-isClosed") === "false"
             ) {
-              app.style.borderBottom = "3px solid #eeeeeea8";
+              this.style.borderBottom = "3px solid #eeeeeea8";
               console.log(toLaunch);
               $(`#${toLaunch}`).removeAttr("hidden");
-            }
-            if (
+            } else if (
               $(`#${toLaunch}`).attr("hidden") === "" &&
               $(`#${toLaunch}`).attr("data-isClosed") === "true"
             ) {
-              app.style.backgroundColor = "#ffffff00";
-              app.style.borderBottom = "0px solid #ffffff00";
+              this.style.backgroundColor = "#ffffff00";
+              this.style.borderBottom = "0px solid #ffffff00";
               console.log(toLaunch);
               $(`#${toLaunch}`).removeAttr("hidden");
               $(`#${toLaunch}`).attr("data-isClosed", "false");
