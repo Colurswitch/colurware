@@ -12452,21 +12452,21 @@
           app.onclick = function () {
             var toLaunch = this.dataset.app;
             if (
-              $(`#${toLaunch}`).attr("hidden") === undefined &&
+              !$(`#${toLaunch}`).attr("hidden") &&
               $(`#${toLaunch}`).data("isClosed") === "false"
             ) {
               this.style.backgroundColor = "#ffffff1f";
               console.log(toLaunch);
               $(`#${toLaunch}`).attr("hidden", "");
             } else if (
-              $(`#${toLaunch}`).attr("hidden") === "" &&
+              $(`#${toLaunch}`).attr("hidden") &&
               $(`#${toLaunch}`).data("isClosed") === "false"
             ) {
               this.style.borderBottom = "3px solid #eeeeeea8";
               console.log(toLaunch);
               $(`#${toLaunch}`).removeAttr("hidden");
             } else if (
-              $(`#${toLaunch}`).attr("hidden") === "" &&
+              $(`#${toLaunch}`).attr("hidden") &&
               $(`#${toLaunch}`).data("isClosed") === "true"
             ) {
               this.style.backgroundColor = "#ffffff00";
